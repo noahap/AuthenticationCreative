@@ -1,0 +1,7 @@
+nohup: ignoring input
+Connection established to mongodb://localhost:27017/
+[0mGET /index.html [32m200 [0m8.748 ms - 2173[0m
+[0mGET /javascripts/app.js [36m304 [0m1.582 ms - -[0m
+[0mGET /ACreate.html [36m304 [0m1.263 ms - -[0m
+[0mGET /main.css [33m404 [0m307.430 ms - 1793[0m
+[0mGET /favicon.ico [33m404 [0m41.614 ms - 1793[0m

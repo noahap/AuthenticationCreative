@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <title>Budget Keeper</title>
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDJQ86X3COVy0gpEMTG5xc15JlNqEml0cc",
+    authDomain: "acreate-8bf45.firebaseapp.com",
+    databaseURL: "https://acreate-8bf45.firebaseio.com",
+    projectId: "acreate-8bf45",
+    storageBucket: "acreate-8bf45.appspot.com",
+    messagingSenderId: "228223392203"
+  };
+  firebase.initializeApp(config);
+</script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js">//include ajax</script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+  <script src="javascripts/app.js">//include javascrpt page in public folder app.js</script>
+  <script>
+      function signOut(event) {
+          event.preventDefault();
+        window.location = 'ACreate.html';
+      }
+  </script>
+    <style>
+        body {
+            background-color: lightblue;
+        }
+        h1 {
+            color: #303D9D;
+        }
+        
+        
+        
+    </style>
+    <body ng-app="voting"  ng-controller="MainCtrl"> 
+        <h1>Welcome to your Budget Keeper!</h1>
+        <h3>Where all your expenses are listed. </h3>
+        <br>
+        <h4>Your entries will not be saved, for your security.</h4>
+        <br>
+        <p>Please add an expense: </p>
+        
+        <form ng-submit="addCandidate()">
+            <label for= "Name">Purchase </label><input type="text" id = "Name" placeholder= "Product Name" ng-model="formContent"></input></br>
+            <label for= "Name">Price </label><input type="text" id = "Price" placeholder = "Price" ng-model="cost"></input></br>
+            <button type="submit" class="btn btn-primary">Add Expense</button>
+            
+            
+            <button class="btn btn-primary" onclick="signOut(event)">Return to Login</button>
+        </form>
+        <h3>Current Expenses</h3>
+        <div ng-repeat="candidate in candidates | orderBy:['Name']">
+          {{candidate.Name}} - price {{candidate.Price}}
+          
+              
+        
+        </div>
+    </body>
+</html>
+
